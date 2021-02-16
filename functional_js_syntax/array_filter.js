@@ -1,11 +1,16 @@
 // 1. Find all the words with more than 7 characters
 const words = ['tardis', 'grok', 'frak', 'blaster', 'klingon', 'shepherd']
-
+const filterWords = words.filter((e) => e.length >= 7)
+console.log('words', filterWords)
 // expected output: Array ['shepherd']
 
 // ----------------------------------------------------------
 // 2. Find all even values
-const words = [12, 13, 14, 15, 16, 17]
+const evenWords = [12, 13, 14, 15, 16, 17]
+const filterEvenWords = evenWords.filter((e) => {
+    return e % 2 === 0
+})
+console.log('evenWords', filterEvenWords)
 
 // expected output: Array [12, 14, 16]
 
@@ -42,6 +47,7 @@ const hunters = [
     },
 ]
 
+const activeHunter = hunters.filter((e) => e.status === 'active')
 // expected output: Array [
 //     {
 //         name: 'Greedo',
@@ -54,3 +60,5 @@ const hunters = [
 //         status: 'active',
 //     },
 // ]
+
+console.log('activeHunter', activeHunter)
