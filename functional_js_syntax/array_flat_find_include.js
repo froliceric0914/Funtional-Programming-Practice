@@ -5,18 +5,23 @@
 
 const characters = [
     ['Starlord', 'Gamora', 'Groot'],
-    ['Dr. Strange', ['Captain America', 'Bucky Barnes'], ['Thor', 'Hulk', ['Loki']], 'Thanos'],
+    [
+        'Dr. Strange',
+        ['Captain America', 'Bucky Barnes'],
+        ['Thor', 'Hulk', ['Loki']],
+        'Thanos',
+    ],
     ['Iron Man', 'Ultron'],
     ['Spider Man', ['Venom']],
-    ['Professor X', 'Wolverine', 'Quicksilver', ['Magneto']]
+    ['Professor X', 'Wolverine', 'Quicksilver', ['Magneto']],
 ]
 
-const results = characters.flat(1)
+// const results = characters.flat(1)
 // const results = characters.flat(2)
-// const results = characters.flat(3)
+// const results = characters.flcat(3)
 // And what happens if you go past the max depth of the array?
 // const results = characters.flat(5)
-
+// console.log('results', results)
 // ----------------------------------------------------------
 // FIND EXERCISE
 // ----------------------------------------------------------
@@ -24,16 +29,11 @@ const results = characters.flat(1)
 
 // Determine whether any of the following have a value that contains the characters 'ABC'
 
-const ids = [
-    'ADHKE',
-    'ANFKM',
-    'QIMVU',
-    'PQMFU',
-    'ABCKO',
-    'IUABC'
-]
-
-
+const ids = ['ADHKE', 'ANFKM', 'QIMVU', 'PQMFU', 'ABCKO', 'IUABC']
+console.log(
+    'ABC',
+    ids.find((e) => e.includes('ABC')),
+)
 // ----------------------------------------------------------
 // INCLUDE EXERCISES
 // ----------------------------------------------------------
@@ -49,7 +49,7 @@ const admins = [
     '29nv283bfc0szn16723',
     '029834zmnv9jhgfu2ab',
     '12mnz09v87bas78fb12',
-    '098Xc8x76m3nb4aposi'
+    '098Xc8x76m3nb4aposi',
 ]
 
 // ----------------------------------------------------------
@@ -64,7 +64,7 @@ const A = [
     '29nv283bfc0szn16723',
     '029834zmnv9jhgfu2ab',
     '12mnz09v87bas78fb12',
-    '098Xc8x76m3nb4aposi'
+    '098Xc8x76m3nb4aposi',
 ]
 
 const B = [
@@ -73,5 +73,12 @@ const B = [
     '12mn0vnZkadfh237LPd',
     '1209MNBd8723nvkwejs',
     '298374naskdj273ubsl',
-    '098LKJnsvijevkwejf6'
+    '098LKJnsvijevkwejf6',
 ]
+
+const C = A.filter((item) => {
+    console.log(B.includes(item))
+    return B.includes(item)
+})
+
+console.log(C)
