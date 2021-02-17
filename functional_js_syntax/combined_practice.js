@@ -162,7 +162,10 @@ const onlyRoles = characters.reduce((acc, cur, i, arr) => {
 // ----------------------------------------------------------
 
 // What is the average power level across all characters?
-
+const averagePower = characters
+    .map((c) => c.power_level)
+    .reduce((acc, cur, i) => (acc + cur) / i)
 // Your code here
 
+console.log('averagePower', averagePower)
 // expected output: 68.71319452795147
