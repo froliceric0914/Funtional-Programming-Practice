@@ -140,6 +140,18 @@ const dimentionalRoles = characters.reduce((acc, cur, i, arr) => {
 // Create an array containing characters' names who are the only character listed in their universe.
 
 // Your Code here
+const onlyRoles = characters.reduce((acc, cur, i, arr) => {
+    acc[cur.universe] = acc[cur.universe] === undefined ? [] : acc[cur.universe]
+    acc[cur.universe].push(cur)
+    if (i + 1 == arr.length) {
+        //destucturing the array
+        return Object.entries(acc)
+            .filter(([_, arr]) => arr.length === 1)
+            .map(([_, arr]) => arr[0].name)
+    }
+    console.log('acc', acc)
+    return acc
+}, [])
 
 // expected output: [ Marvin the Paranoid Android, Peter Venkman, Dr. Daniel Jackson ]
 
