@@ -149,10 +149,10 @@ const onlyRoles = characters.reduce((acc, cur, i, arr) => {
             .filter(([_, arr]) => arr.length === 1)
             .map(([_, arr]) => arr[0].name)
     }
-    console.log('acc', acc)
     return acc
 }, [])
 
+console.log('onlyRoles', onlyRoles)
 // expected output: [ Marvin the Paranoid Android, Peter Venkman, Dr. Daniel Jackson ]
 
 // ----------------------------------------------------------
