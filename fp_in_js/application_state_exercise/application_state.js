@@ -3,8 +3,8 @@
 let store = {
     user: {
         first_name: 'John',
-        last_name: 'Doe'
-    }
+        last_name: 'Doe',
+    },
 }
 
 const render = (root, state) => {
@@ -27,8 +27,12 @@ window.addEventListener('load', () => {
 })
 
 // But what if state changes at some point in our app?
-// Using the object methods we have learned so far in this course, 
+// Using the object methods we have learned so far in this course,
 // create a function called updateStore that takes in the old state, the new state, and updates the old state with any new information
 // This won't be a pure function, instead of a return, call the render method again
 
 // Your Code
+const updateStore = (store, newState) => {
+    store = Object.assign(store, newState)
+    render(root, store)
+}

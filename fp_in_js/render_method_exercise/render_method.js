@@ -13,7 +13,7 @@ const App = () => {
     `
 }
 
-const render = root => {
+const render = (root) => {
     root.innerHTML = App()
 }
 
@@ -21,15 +21,33 @@ render(root)
 
 // Add a new Menu component that takes in a show argument which is either true or false
 // Show this content if show is true:
-{/* <nav>
+{
+    /* <nav>
     <ul>
         <li>About Us</li>
         <li>Contact Us</li>
         <li>Login</li>
     </ul>
-</nav> */}
+</nav> */
+}
 
 // and this content if show is false:
-{/* <nav>Menu</nav> */ }
+{
+    /* <nav>Menu</nav> */
+}
 
 // Your Code Here
+const Menu = (show) => {
+    if (show) {
+        return `
+                <nav>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Login</li>
+                    </ul>
+                </nav>
+            `
+    }
+    return `<nav>Menu</nav>`
+}
